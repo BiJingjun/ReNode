@@ -1,26 +1,13 @@
-## Transductive Setting
+## ReNode_weigth matrix
 
-### a) Introduction
-The code for the transductive setting semi-supervised learning. 
-Including the CORA/CiteSeer/PubMed/Photo/Computers experiment datasets as shown in paper. 
-It is implemented mainly based on pytorch_geometric project: https://github.com/rusty1s/pytorch_geometric
+## Introduction
+We use part of the code NeurIPS 2021 paper "[Topology-Imbalance Learning for Semi-Supervised Node Classification](https://arxiv.org/abs/2110.04099)", to generate the ReNode_weigth matrix with the Scene15 datasets as example. The ReNode_weigth matrix can be used in [ReNode-GLCNMR](https://github.com/BiJingjun/ReNode-GLCNMR). 
+One can change the datasets' information in 'load_data.py' to generate the ReNode_weigth matrix with other datasets.
 
-### b) Quick Start
+
+## Quick Start
 - Prepare conda enviroment; more package info can be found in "requirements.txt"
-- Set the operations in 'opt.py'; some important operations are listed:
-    1. Experiment Dataset (the dataset will be downloaded automatically at the first running time):
-       set data_name = ['cora','citeseer','pubmed','photo','computers']
-    2. Backbone GNN':\
-       set model = ['sgc','ppnp','gcn','gat','sage','cheb']
-    3. Training Loss:\
-       set loss-name = ['ce','focal','re-weight','cb-softmax']
-    4. ReNode Method:\
-       set renode-reweight = 1/0 to open/close ReNode\
-       set rn-base-weight as the lowerbound of the ReNode Factor\
-       set rn-scale-weight as the scale range of the ReNode Factor
-    5. Imbalance Issue:\
-       set size-imb-type = 'none' if study TINL-only\
-       set size-imb-type = 'step' if study TINL&QINL    
+- Set the operations in 'opt.py'
 - Running command: 'python transductive_run.py'
       
 
