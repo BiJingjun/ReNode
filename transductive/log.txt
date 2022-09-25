@@ -1,0 +1,38 @@
+model:gcn
+num_hidden:32
+num_feature:745
+num_class:7
+num_layer:2
+data_path:../data/scence
+data_name:scence
+size_imb_type:none
+train_each:50
+valid_each:100
+labeling_ratio:0.01
+head_list:[0, 1, 2]
+imb_ratio:1.0
+lr:0.0075
+lr_decay_epoch:20
+lr_decay_rate:0.95
+weight_decay:0
+dropout:0.5
+gpu:0
+epoch:200
+least_epoch:40
+early_stop:20
+log_path:log.txt
+saved_model:best-model.pt
+run_split_num:5
+run_init_num:3
+pagerank_prob:0.85
+ppr_topk:-1
+renode_reweight:1
+rn_base_weight:0.5
+rn_scale_weight:30.0
+loss_name:ce
+factor_focal:2.0
+factor_cb:0.9999
+shuffle_seed_list:[0, 1, 2, 3, 4]
+seed_list:[0, 1, 2]
+ppr_file:../data/scence/scence_ppr.pt
+device:cuda:0
